@@ -12,7 +12,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 #
 # This file is the build configuration for a full Android
 # build for grouper hardware. This cleanly combines a set of
@@ -29,5 +28,9 @@ DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus5/overlay/common
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/oneplus/oneplus5t/prebuilt/system,system) \
     $(call find-copy-subdir-files,*,device/oneplus/oneplus5t/prebuilt/root,root)
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.0-service-custom
 
 include device/oneplus/oneplus5/device.mk
