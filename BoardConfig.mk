@@ -18,7 +18,8 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
-DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS := 0x0000008c
+
+BOARD_SEPOLICY_DIRS += device/oneplus/oneplus5t/sepolicy/vendor
 
 include device/oneplus/oneplus5/BoardConfig.mk
 
