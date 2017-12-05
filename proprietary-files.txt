@@ -1,6 +1,6 @@
 #fingerprint
-lib64/hw/fingerprint.msm8998.gf.so
-lib/hw/fingerprint.msm8998.gf.so
+lib64/hw/fingerprint.msm8998.gf.so:lib64/hw/gf_fingerprint.msm8998.so
+lib/hw/fingerprint.msm8998.gf.so:lib/hw/gf_fingerprint.msm8998.so
 lib64/libgoodixfingerprintd_binder.so
 lib/libgoodixfingerprintd_binder.so
 lib/libgf_hal.so
