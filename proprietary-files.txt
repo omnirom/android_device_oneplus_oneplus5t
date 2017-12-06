@@ -3,3 +3,6 @@ lib64/hw/fingerprint.msm8998.gf.so:lib64/hw/gf_fingerprint.msm8998.so
 lib64/libgoodixfingerprintd_binder.so
 lib64/libgf_hal.so
 lib64/libgf_ca.so
+
+#audio
+vendor/lib/rfsa/adsp/libdirac17801-capiv2.so
