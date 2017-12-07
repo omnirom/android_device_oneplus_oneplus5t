@@ -6,3 +6,7 @@ lib64/libgf_ca.so
 
 #audio
 vendor/lib/rfsa/adsp/libdirac17801-capiv2.so
+
+#tp
+etc/firmware/tp/fw_synaptics_17801.img
+
