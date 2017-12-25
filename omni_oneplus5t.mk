@@ -38,6 +38,8 @@ $(call inherit-product, vendor/omni/config/common.mk)
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/oneplus/oneplus5t/device.mk)
 
+ALLOW_MISSING_DEPENDENCIES := true
+
 PRODUCT_PROPERTY_OVERRIDES += ro.hardware.nfc_nci=nqx.default
 
 # Discard inherited values and use our own instead.
