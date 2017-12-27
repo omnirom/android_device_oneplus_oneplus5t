@@ -26,8 +26,7 @@ DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus5/overlay/common
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/oneplus/oneplus5t/prebuilt/system,system) \
-    $(call find-copy-subdir-files,*,device/oneplus/oneplus5t/prebuilt/root,root)
+    $(call find-copy-subdir-files,*,device/oneplus/oneplus5t/prebuilt/system,system)
 
 # Fingerprint
 PRODUCT_PACKAGES += \
