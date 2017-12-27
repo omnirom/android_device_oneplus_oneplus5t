@@ -33,4 +33,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.0-service-custom
 
+# Keylayouts
+PRODUCT_COPY_FILES += \
+    device/oneplus/oneplus5t/keylayout/gf_input.kl:system/usr/keylayout/gf_input.kl \
+
 include device/oneplus/oneplus5/device.mk
