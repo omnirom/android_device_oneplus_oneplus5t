@@ -3,6 +3,8 @@ lib64/hw/fingerprint.msm8998.gf.so:lib64/hw/gf_fingerprint.msm8998.so
 lib64/libgoodixfingerprintd_binder.so
 lib64/libgf_hal.so
 lib64/libgf_ca.so
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 
 #audio
 vendor/lib/rfsa/adsp/libdirac17801-capiv2.so
