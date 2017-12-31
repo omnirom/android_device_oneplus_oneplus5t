@@ -53,6 +53,11 @@ public class GestureSettings extends PreferenceFragment implements
     public static final String KEY_LEFT_SWIPE_APP = "left_swipe_gesture_app";
     public static final String KEY_RIGHT_SWIPE_APP = "right_swipe_gesture_app";
 
+    public static final String FP_GESTURE_SWIPE_DOWN_APP = "fp_down_swipe_gesture_app";
+    public static final String FP_GESTURE_SWIPE_UP_APP = "fp_up_swipe_gesture_app";
+    public static final String FP_GESTURE_SWIPE_RIGHT_APP = "fp_right_swipe_gesture_app";
+    public static final String FP_GESTURE_SWIPE_LEFT_APP = "fp_left_swipe_gesture_app";
+
     public static final String DEVICE_GESTURE_MAPPING_0 = "device_gesture_mapping_0_0";
     public static final String DEVICE_GESTURE_MAPPING_1 = "device_gesture_mapping_1_0";
     public static final String DEVICE_GESTURE_MAPPING_2 = "device_gesture_mapping_2_0";
@@ -63,6 +68,10 @@ public class GestureSettings extends PreferenceFragment implements
     public static final String DEVICE_GESTURE_MAPPING_7 = "device_gesture_mapping_7_0";
     public static final String DEVICE_GESTURE_MAPPING_8 = "device_gesture_mapping_8_0";
     public static final String DEVICE_GESTURE_MAPPING_9 = "device_gesture_mapping_9_0";
+    public static final String DEVICE_GESTURE_MAPPING_10 = "device_gesture_mapping_10_0";
+    public static final String DEVICE_GESTURE_MAPPING_11 = "device_gesture_mapping_11_0";
+    public static final String DEVICE_GESTURE_MAPPING_12 = "device_gesture_mapping_12_0";
+    public static final String DEVICE_GESTURE_MAPPING_13 = "device_gesture_mapping_13_0";
 
     private TwoStatePreference mProxiSwitch;
     private AppSelectListPreference mDoubleSwipeApp;
@@ -75,6 +84,10 @@ public class GestureSettings extends PreferenceFragment implements
     private AppSelectListPreference mUpSwipeApp;
     private AppSelectListPreference mLeftSwipeApp;
     private AppSelectListPreference mRightSwipeApp;
+    private AppSelectListPreference mFPDownSwipeApp;
+    private AppSelectListPreference mFPUpSwipeApp;
+    private AppSelectListPreference mFPRightSwipeApp;
+    private AppSelectListPreference mFPLeftSwipeApp;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -143,6 +156,31 @@ public class GestureSettings extends PreferenceFragment implements
         value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_9);
         mRightSwipeApp.setValue(value);
         mRightSwipeApp.setOnPreferenceChangeListener(this);
+
+        mFPDownSwipeApp = (AppSelectListPreference) findPreference(FP_GESTURE_SWIPE_DOWN_APP);
+        mFPDownSwipeApp.setEnabled(true);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_10);
+        mFPDownSwipeApp.setValue(value);
+        mFPDownSwipeApp.setOnPreferenceChangeListener(this);
+        
+        mFPUpSwipeApp = (AppSelectListPreference) findPreference(FP_GESTURE_SWIPE_UP_APP);
+        mFPUpSwipeApp.setEnabled(true);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_11);
+        mFPUpSwipeApp.setValue(value);
+        mFPUpSwipeApp.setOnPreferenceChangeListener(this);
+
+        mFPRightSwipeApp = (AppSelectListPreference) findPreference(FP_GESTURE_SWIPE_RIGHT_APP);
+        mFPRightSwipeApp.setEnabled(true);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_12);
+        mFPRightSwipeApp.setValue(value);
+        mFPRightSwipeApp.setOnPreferenceChangeListener(this);
+
+        mFPLeftSwipeApp = (AppSelectListPreference) findPreference(FP_GESTURE_SWIPE_LEFT_APP);
+        mFPLeftSwipeApp.setEnabled(true);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_13);
+        mFPLeftSwipeApp.setValue(value);
+        mFPLeftSwipeApp.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -207,6 +245,18 @@ public class GestureSettings extends PreferenceFragment implements
             boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
             setGestureEnabled(KEY_RIGHT_SWIPE_APP, !gestureDisabled);
             Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_9, value);
+        } else if (preference == mFPDownSwipeApp) {
+            String value = (String) newValue;
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_10, value);
+        } else if (preference == mFPUpSwipeApp) {
+            String value = (String) newValue;
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_11, value);
+        } else if (preference == mFPRightSwipeApp) {
+            String value = (String) newValue;
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_12, value);
+        } else if (preference == mFPLeftSwipeApp) {
+            String value = (String) newValue;
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_13, value);
         }
         return true;
     }
