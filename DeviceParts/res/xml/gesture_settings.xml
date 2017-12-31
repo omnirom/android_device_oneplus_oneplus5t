@@ -21,6 +21,12 @@
         android:title="@string/proxi_title_head"
         android:persistent="false" />
 
+    <SwitchPreference
+        android:key="fp_swipe_down_switch"
+        android:summary="@string/fp_swipe_down_switch_summary_head"
+        android:title="@string/fp_swipe_down_switch_title_head"
+        android:persistent="false" />
+
     <PreferenceCategory
         android:title="@string/gesture_app_title">
 
@@ -72,6 +78,26 @@
         <org.omnirom.device.AppSelectListPreference
             android:key="right_swipe_gesture_app"
             android:title="@string/category_right_swipe_gesture"
+            android:persistent="false"/>
+
+        <org.omnirom.device.AppSelectListPreference
+            android:key="fp_down_swipe_gesture_app"
+            android:title="@string/category_fp_down_swipe_gesture"
+            android:persistent="false"/>
+
+        <org.omnirom.device.AppSelectListPreference
+            android:key="fp_up_swipe_gesture_app"
+            android:title="@string/category_fp_up_swipe_gesture"
+            android:persistent="false"/>
+
+        <org.omnirom.device.AppSelectListPreference
+            android:key="fp_right_swipe_gesture_app"
+            android:title="@string/category_fp_right_swipe_gesture"
+            android:persistent="false"/>
+
+        <org.omnirom.device.AppSelectListPreference
+            android:key="fp_left_swipe_gesture_app"
+            android:title="@string/category_fp_left_swipe_gesture"
             android:persistent="false"/>
 
     </PreferenceCategory>
