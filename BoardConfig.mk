@@ -21,5 +21,12 @@
 
 BOARD_SEPOLICY_DIRS += device/oneplus/oneplus5t/sepolicy/vendor
 
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_PIC := true
+ifneq ($(TARGET_BUILD_VARIANT),user)
+  # Retain classes.dex in APK's for non-user builds
+  DEX_PREOPT_DEFAULT := nostripping
+  WITH_DEXPREOPT_PIC := true
+endif
 include device/oneplus/oneplus5/BoardConfig.mk
 
