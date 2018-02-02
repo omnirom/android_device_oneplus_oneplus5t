@@ -232,3 +232,5 @@ persist.radio.flexmap_type=disabled
 
 persist.sys.oem.otg_support=true
 
+persist.sys.sf.color_saturation=1.3
+
