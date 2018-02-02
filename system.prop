@@ -190,6 +190,7 @@ ro.sf.lcd_density=420
 
 persist.camera.mobicat=2
 persist.camera.stats.debugexif=3080192
+persist.camera.HAL3.enabled=1
 persist.ts.rtmakeup=false
 
 #Disable Skip Validate
