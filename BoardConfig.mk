@@ -19,6 +19,8 @@
 # product configuration (apps).
 #
 
+TARGET_USE_SDCLANG := true
+
 BOARD_SEPOLICY_DIRS += device/oneplus/oneplus5t/sepolicy/vendor
 
 include device/oneplus/oneplus5/BoardConfig.mk

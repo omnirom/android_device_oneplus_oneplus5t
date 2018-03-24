@@ -67,6 +67,7 @@ ro.gps.agps_provider=1
 # Graphics
 debug.sf.latch_unsignaled=1
 debug.gralloc.enable_fb_ubwc=1
+dev.pm.dyn_samplingrate=1
 ro.opengles.version=196610
 sdm.perf_hint_window=50
 persist.hwc.enable_vds=1
@@ -162,17 +163,17 @@ persist.sys.wfd.virtual=0
 ro.vendor.core_ctl_min_cpu=2
 ro.vendor.core_ctl_max_cpu=4
 
-ro.hwui.texture_cache_size=96
-ro.hwui.layer_cache_size=64
-ro.hwui.r_buffer_cache_size=12
-ro.hwui.path_cache_size=39
+ro.hwui.texture_cache_size=72
+ro.hwui.layer_cache_size=48
+ro.hwui.r_buffer_cache_size=8
+ro.hwui.path_cache_size=32
 ro.hwui.gradient_cache_size=1
-ro.hwui.drop_shadow_cache_size=7
+ro.hwui.drop_shadow_cache_size=6
 ro.hwui.texture_cache_flushrate=0.4
-ro.hwui.text_small_cache_width=2048
-ro.hwui.text_small_cache_height=2048
-ro.hwui.text_large_cache_width=3072
-ro.hwui.text_large_cache_height=2048
+ro.hwui.text_small_cache_width=1024
+ro.hwui.text_small_cache_height=1024
+ro.hwui.text_large_cache_width=2048
+ro.hwui.text_large_cache_height=4096
 
 #re enable on O
 #persist.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
@@ -189,7 +190,7 @@ vendor.display.enable_default_color_mode=0
 ro.sf.lcd_density=420
 
 persist.camera.mobicat=2
-persist.camera.stats.debugexif=3080192
+#persist.camera.stats.debugexif=3080192
 persist.camera.HAL3.enabled=1
 persist.ts.rtmakeup=false
 
@@ -234,4 +235,9 @@ persist.sys.oem.otg_support=true
 
 persist.sys.sf.color_saturation=1.2
 debug.sf.enable_hwc_vds=1
+debug.sf.hw=1
+
+persist.vendor.audio.aanc.enable=true
+persist.rcs.supported=0
+
 
