@@ -20,6 +20,8 @@
 #
 
 BOARD_SEPOLICY_DIRS += device/oneplus/oneplus5t/sepolicy/vendor
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/oneplus/oneplus5t/sepolicy/private
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += device/oneplus/oneplus5t/sepolicy/public
 
 include device/oneplus/oneplus5/BoardConfig.mk
 
