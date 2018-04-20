@@ -19,7 +19,6 @@
 # product configuration (apps).
 #
 $(call inherit-product, vendor/oneplus/oneplus5t/device-vendor.mk)
-$(call inherit-product, vendor/oneplus/oneplus5/device-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus5t/overlay
 DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus5/overlay/common
