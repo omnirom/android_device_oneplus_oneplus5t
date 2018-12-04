@@ -35,6 +35,10 @@ $(call inherit-product, build/make/target/product/treble_common_64.mk)
 # must be before including omni part
 TARGET_BOOTANIMATION_SIZE := 1080p
 
+DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus5/overlay/common
+DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus5t/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/omni/overlay/CarrierConfig
+
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
