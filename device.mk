@@ -20,9 +20,6 @@
 #
 $(call inherit-product, vendor/oneplus/oneplus5t/device-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus5t/overlay
-DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus5/overlay/common
-
 # Prebuilt
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/oneplus/oneplus5t/prebuilt/system,system)
