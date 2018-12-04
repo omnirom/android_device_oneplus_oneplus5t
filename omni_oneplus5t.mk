@@ -35,6 +35,10 @@ $(call inherit-product, build/make/target/product/treble_common_64.mk)
 # must be before including omni part
 TARGET_BOOTANIMATION_SIZE := 1080p
 
+DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus5/overlay/common
+DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus5t/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/omni/overlay/CarrierConfig
+
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
@@ -53,6 +57,8 @@ PRODUCT_MODEL := ONEPLUS A5010
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=OnePlus5T PRODUCT_NAME=OnePlus5T
 
 PRODUCT_BUILD_PROP_OVERRIDES +=\
-    BUILD_FINGERPRINT=OnePlus/OnePlus5T/OnePlus5T:8.1.0/OPM1.171019.011/06131716:user/release-keys \
-    PRIVATE_BUILD_DESC="OnePlus5T-user 8.1.0 OPM1.171019.011 06131716 release-keys"
+    BUILD_FINGERPRINT=OnePlus/OnePlus5T/OnePlus5T:9/PKQ1.180716.001/1811282137:user/release-keys \
+    PRIVATE_BUILD_DESC="OnePlus5T-user 9 PKQ1.180716.001 1811282137 release-keys"
 TARGET_VENDOR := oneplus
+
+PLATFORM_SECURITY_PATCH_OVERRIDE := 2018-11-01
