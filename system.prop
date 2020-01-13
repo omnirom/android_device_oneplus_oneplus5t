@@ -323,8 +323,6 @@ ro.vendor.qti.sys.fw.bservice_age=5000
 #endif/*VENDOR_EDIT*/
 
 #omni
-ro.hardware.lights=oneplus5
-ro.hardware.power=oneplus5
 media.settings.xml=/system/etc/media_profiles_vendor.xml
 ro.config.ringtone=omni_ringtone1.ogg
 ro.config.notification_sound=omni_notification1.ogg

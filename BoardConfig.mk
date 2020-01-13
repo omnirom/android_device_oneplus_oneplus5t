@@ -23,8 +23,9 @@ BOARD_PATH := device/oneplus/oneplus5t
 
 TARGET_SYSTEM_PROP := $(BOARD_PATH)/system.prop
 
-BOARD_SEPOLICY_DIRS += device/oneplus/oneplus5t/sepolicy/vendor
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/oneplus/oneplus5t/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += device/oneplus/oneplus5t/sepolicy/public
+
+BOARD_PREBUILT_VENDORIMAGE := vendor/image/oneplus/oneplus5t/vendor.img
 
 include device/oneplus/oneplus5/BoardConfig.mk

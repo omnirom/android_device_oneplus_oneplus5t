@@ -19,6 +19,11 @@
 # product configuration (apps).
 #
 
+VENDOR_EXCEPTION_PATHS += oneplus \
+    omni
+
+PRODUCT_BUILD_RAMDISK_IMAGE := true
+
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -28,9 +33,6 @@ $(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-
-#treble
-$(call inherit-product, build/make/target/product/treble_common_64.mk)
 
 # must be before including omni part
 TARGET_BOOTANIMATION_SIZE := 1080p
@@ -45,7 +47,15 @@ $(call inherit-product, vendor/omni/config/common.mk)
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/oneplus/oneplus5t/device.mk)
 
+# get the rest of aosp stuff after ours
+$(call inherit-product, $(SRC_TARGET_DIR)/product/mainline_system_arm64.mk)
+
 ALLOW_MISSING_DEPENDENCIES := true
+PRODUCT_SHIPPING_API_LEVEL := 26
+
+# Verity
+PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
+$(call inherit-product, build/target/product/verity.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := omni_oneplus5t
@@ -54,11 +64,12 @@ PRODUCT_BRAND := OnePlus
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_MODEL := ONEPLUS A5010
 
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=OnePlus5T PRODUCT_NAME=OnePlus5T
+TARGET_DEVICE := OnePlus5T
+PRODUCT_SYSTEM_NAME := OnePlus5T
 
-PRODUCT_BUILD_PROP_OVERRIDES +=\
-    BUILD_FINGERPRINT=OnePlus/OnePlus5T/OnePlus5T:9/PKQ1.180716.001/1905271747:user/release-keys \
-    PRIVATE_BUILD_DESC="OnePlus5T-user 9 PKQ1.180716.001 1905271747 release-keys"
+BUILD_FINGERPRINT := OnePlus/OnePlus5T/OnePlus5T:9/PKQ1.180716.001/1905271747:user/release-keys
+OMNI_BUILD_FINGERPRINT := OnePlus/OnePlus5T/OnePlus5T:9/PKQ1.180716.001/1905271747:user/release-keys
+OMNI_PRIVATE_BUILD_DESC :="'OnePlus5T-user 9 PKQ1.180716.001 1905271747 release-keys'"
 TARGET_VENDOR := oneplus
 
 PLATFORM_SECURITY_PATCH_OVERRIDE := 2019-05-01
